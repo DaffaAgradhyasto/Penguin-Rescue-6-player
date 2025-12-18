@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguin Rescue - 6 Player Multiplayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐧 Penguin Rescue 🐧</h1>
+            <p class="subtitle">6 Player Local Multiplayer</p>
+        </header>
+
+        <div class="game-info">
+            <div class="instructions">
+                <h3>How to Play:</h3>
+                <p>Rescue baby penguins and bring them to the safe zone! Avoid obstacles!</p>
+                <div class="controls-grid">
+                    <div class="control-set">
+                        <strong>Player 1 (Red):</strong> WASD
+                    </div>
+                    <div class="control-set">
+                        <strong>Player 2 (Blue):</strong> Arrow Keys
+                    </div>
+                    <div class="control-set">
+                        <strong>Player 3 (Green):</strong> TFGH
+                    </div>
+                    <div class="control-set">
+                        <strong>Player 4 (Yellow):</strong> IJKL
+                    </div>
+                    <div class="control-set">
+                        <strong>Player 5 (Purple):</strong> Numpad 8456
+                    </div>
+                    <div class="control-set">
+                        <strong>Player 6 (Orange):</strong> UYHN
+                    </div>
+                </div>
+            </div>
+
+            <div class="scoreboard">
+                <h3>Scores:</h3>
+                <div id="scores">
+                    <div class="score player1">Player 1: <span id="score1">0</span></div>
+                    <div class="score player2">Player 2: <span id="score2">0</span></div>
+                    <div class="score player3">Player 3: <span id="score3">0</span></div>
+                    <div class="score player4">Player 4: <span id="score4">0</span></div>
+                    <div class="score player5">Player 5: <span id="score5">0</span></div>
+                    <div class="score player6">Player 6: <span id="score6">0</span></div>
+                </div>
+                <div class="game-stats">
+                    <p>Babies Rescued: <span id="rescued">0</span> / <span id="total">10</span></p>
+                    <p>Time: <span id="timer">0:00</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <canvas id="gameCanvas" width="1200" height="700"></canvas>
+            <div id="gameOver" class="game-over hidden">
+                <h2>Game Complete!</h2>
+                <p id="winnerText"></p>
+                <button id="restartBtn">Play Again</button>
+            </div>
+        </div>
+
+        <div class="controls-bar">
+            <button id="startBtn">Start Game</button>
+            <button id="pauseBtn" disabled>Pause</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
