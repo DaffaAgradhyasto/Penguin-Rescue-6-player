@@ -1,6 +1,14 @@
 # 🐧 Penguin Rescue - 6 Player Multiplayer 🐧
 
-A fun local multiplayer game where up to 6 players work together (or compete!) to rescue baby penguins and bring them to the safe zone!
+A fun multiplayer game where up to 6 players work together (or compete!) to rescue baby penguins and bring them to the safe zone!
+
+## 🎮 Two Game Modes
+
+### 🏠 Local Multiplayer
+Play with friends on the same computer using one keyboard - perfect for couch gaming!
+
+### 🌐 Online Multiplayer (NEW!)
+Play with friends anywhere in the world via internet connection! Create or join rooms and play together in real-time.
 
 ## 🎮 How to Play
 
@@ -26,7 +34,7 @@ Rescue all the baby penguins (marked with ❗) and bring them to the green SAFE 
 
 ## 🚀 Getting Started
 
-### Running the Game
+### Quick Start (Both Modes Available)
 
 1. **Clone the repository:**
    ```bash
@@ -34,23 +42,55 @@ Rescue all the baby penguins (marked with ❗) and bring them to the green SAFE 
    cd Penguin-Rescue-6-player
    ```
 
-2. **Open in browser:**
-   - Simply open `index.html` in your web browser, or
-   - Use a local server (recommended):
-     ```bash
-     python3 -m http.server 8080
-     # Then open http://localhost:8080 in your browser
-     ```
+2. **Install dependencies (for online mode):**
+   ```bash
+   npm install
+   ```
 
-3. **Start playing:**
-   - Click "Start Game" button
-   - All players can use their controls simultaneously
-   - Have fun rescuing penguins!
+3. **Start the server:**
+   ```bash
+   npm start
+   ```
+   The server will start on `http://localhost:3000`
+
+4. **Open in browser:**
+   - Navigate to `http://localhost:3000`
+   - Choose between Local or Online multiplayer mode
+
+### Local Multiplayer Mode
+
+**No server required!** Just open `local.html` directly in your browser.
+
+- All players use the same keyboard
+- Instant play, no setup needed
+- Perfect for family game nights
+
+### Online Multiplayer Mode
+
+**Requires server running:**
+
+1. One person starts the server (see step 3 above)
+2. Share your server URL or deploy to a hosting service
+3. Players join the same room using a room code
+4. Up to 6 players can join each room
+5. Host (Player 1) starts the game when everyone is ready
 
 ## 🎯 Features
 
-- ✅ **6 Player Local Multiplayer** - Play with up to 6 friends on the same keyboard
+### Local Multiplayer
+- ✅ **6 Player Same-Device Gaming** - All players on one keyboard
 - ✅ **Unique Player Colors** - Each player has a distinct colored penguin
+- ✅ **No Internet Required** - Play offline anytime
+- ✅ **Instant Start** - No setup or account needed
+
+### Online Multiplayer (NEW!)
+- ✅ **6 Player Online Gaming** - Play with friends anywhere
+- ✅ **Room-Based Matchmaking** - Create or join game rooms
+- ✅ **Real-time Synchronization** - Smooth multiplayer experience
+- ✅ **Room Codes** - Easy sharing to invite friends
+- ✅ **Host Controls** - Room creator starts the game
+
+### Core Gameplay
 - ✅ **Real-time Scoring** - Track each player's score in real-time
 - ✅ **Collision Detection** - Navigate around obstacles
 - ✅ **Timer** - See how fast you can rescue all the babies
@@ -60,10 +100,81 @@ Rescue all the baby penguins (marked with ❗) and bring them to the green SAFE 
 
 ## 🛠️ Technology Stack
 
+### Frontend
 - **HTML5 Canvas** - For game rendering
 - **Vanilla JavaScript** - Game logic and mechanics
 - **CSS3** - Styling and layout
-- No external libraries or frameworks required!
+- **Socket.IO Client** - Real-time communication for online mode
+
+### Backend (Online Mode)
+- **Node.js** - Server runtime
+- **Express** - Web server framework
+- **Socket.IO** - WebSocket server for real-time multiplayer
+
+### Deployment
+- **Heroku-ready** - Includes Procfile for easy deployment
+- **Environment variables** - PORT configuration for hosting services
+
+## 🚀 Deployment
+
+### Deploy to Heroku
+
+1. **Create a Heroku account** at [heroku.com](https://heroku.com)
+
+2. **Install Heroku CLI:**
+   ```bash
+   # On macOS
+   brew install heroku/brew/heroku
+   
+   # On Ubuntu
+   curl https://cli-assets.heroku.com/install.sh | sh
+   ```
+
+3. **Login to Heroku:**
+   ```bash
+   heroku login
+   ```
+
+4. **Create a new Heroku app:**
+   ```bash
+   heroku create penguin-rescue-game
+   ```
+
+5. **Deploy:**
+   ```bash
+   git push heroku main
+   ```
+
+6. **Open your deployed game:**
+   ```bash
+   heroku open
+   ```
+
+Your game will be live at `https://your-app-name.herokuapp.com`!
+
+### Deploy to Other Platforms
+
+**Render:**
+1. Connect your GitHub repository
+2. Set build command: `npm install`
+3. Set start command: `npm start`
+4. Deploy!
+
+**Railway:**
+1. Connect your GitHub repository
+2. Railway will auto-detect Node.js
+3. Deploy!
+
+**DigitalOcean App Platform:**
+1. Connect your GitHub repository
+2. Select Node.js environment
+3. Set run command: `npm start`
+4. Deploy!
+
+### Environment Variables
+
+If deploying to a custom server, set:
+- `PORT` - The port number (default: 3000)
 
 ## 📸 Screenshots
 
@@ -87,8 +198,9 @@ Feel free to fork this project and add your own features! Some ideas:
 - More levels with different layouts
 - Power-ups and special abilities
 - Different obstacle types
-- Online multiplayer support
 - Mobile touch controls
+- Voice chat integration
+- Tournament mode
 
 ## 📝 License
 

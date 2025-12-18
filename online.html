@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguin Rescue - Online Multiplayer</title>
+    <link rel="stylesheet" href="style-online.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐧 Penguin Rescue 🐧</h1>
+            <p class="subtitle">Online Multiplayer - Up to 6 Players</p>
+        </header>
+
+        <!-- Lobby Screen -->
+        <div id="lobbyScreen" class="screen">
+            <div class="lobby-container">
+                <h2>Join or Create a Game Room</h2>
+                <div class="lobby-form">
+                    <input type="text" id="playerName" placeholder="Enter your name" maxlength="20" required>
+                    <input type="text" id="roomId" placeholder="Room ID (e.g., ROOM123)" maxlength="20" required>
+                    <button id="joinBtn" class="primary-btn">Join Room</button>
+                    <button id="createRoomBtn" class="secondary-btn">Create Random Room</button>
+                </div>
+                <div id="lobbyMessage" class="message"></div>
+                <div class="instructions-mini">
+                    <h3>How to Play:</h3>
+                    <p>• Join or create a room to play with up to 6 players online</p>
+                    <p>• Rescue baby penguins and bring them to the safe zone</p>
+                    <p>• Each player gets unique controls assigned automatically</p>
+                    <p>• Player with the most rescues wins!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Waiting Room Screen -->
+        <div id="waitingScreen" class="screen hidden">
+            <div class="waiting-container">
+                <h2>Waiting Room</h2>
+                <p class="room-info">Room ID: <span id="currentRoomId"></span></p>
+                <p class="player-info">You are: <span id="yourPlayerInfo"></span></p>
+                
+                <div class="players-list">
+                    <h3>Players in Room (<span id="playerCount">0</span>/6):</h3>
+                    <div id="playersList"></div>
+                </div>
+
+                <div class="waiting-controls">
+                    <button id="startGameBtn" class="primary-btn" disabled>Start Game</button>
+                    <button id="leaveRoomBtn" class="secondary-btn">Leave Room</button>
+                </div>
+                <p class="waiting-note">Waiting for host to start the game...</p>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen hidden">
+            <div class="game-info">
+                <div class="instructions">
+                    <h3>How to Play:</h3>
+                    <p>Rescue baby penguins and bring them to the safe zone!</p>
+                    <div class="your-controls">
+                        <strong>Your Controls:</strong>
+                        <span id="controlsDisplay"></span>
+                    </div>
+                </div>
+
+                <div class="scoreboard">
+                    <h3>Scores:</h3>
+                    <div id="scores"></div>
+                    <div class="game-stats">
+                        <p>Babies Rescued: <span id="rescued">0</span> / <span id="total">10</span></p>
+                        <p>Time: <span id="timer">0:00</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-container">
+                <canvas id="gameCanvas" width="1200" height="700"></canvas>
+                <div id="gameOver" class="game-over hidden">
+                    <h2>Game Complete!</h2>
+                    <p id="winnerText"></p>
+                    <button id="backToLobbyBtn">Back to Lobby</button>
+                </div>
+            </div>
+
+            <div class="controls-bar">
+                <button id="pauseBtn">Pause</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game-online.js"></script>
+</body>
+</html>
