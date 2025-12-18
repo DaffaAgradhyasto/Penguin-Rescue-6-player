@@ -259,7 +259,7 @@ const KEY_MAPPINGS = [
     { up: 't', down: 'g', left: 'f', right: 'h' },           // Player 3
     { up: 'i', down: 'k', left: 'j', right: 'l' },           // Player 4
     { up: '8', down: '5', left: '4', right: '6' },           // Player 5 (Numpad)
-    { up: 'u', down: 'n', left: 'h', right: 'y' }            // Player 6
+    { up: 'u', down: 'n', left: 'b', right: 'y' }            // Player 6
 ];
 
 // Initialize Game

@@ -22,7 +22,7 @@ Rescue all the baby penguins (marked with ❗) and bring them to the green SAFE 
 | Player 3 | Green 🟢 | **T** (up), **F** (left), **G** (down), **H** (right) |
 | Player 4 | Yellow 🟡 | **I** (up), **J** (left), **K** (down), **L** (right) |
 | Player 5 | Purple 🟣 | **Numpad 8** (up), **4** (left), **5** (down), **6** (right) |
-| Player 6 | Orange 🟠 | **U** (up), **H** (left), **N** (down), **Y** (right) |
+| Player 6 | Orange 🟠 | **U** (up), **B** (left), **N** (down), **Y** (right) |
 
 ## 🚀 Getting Started
 
