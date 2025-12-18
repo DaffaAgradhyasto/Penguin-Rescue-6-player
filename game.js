@@ -428,17 +428,28 @@ function draw() {
         ctx.fill();
     }
 
-    // Draw safe zone
-    safeZone.draw();
+    // Only draw game objects if they're initialized
+    if (safeZone) {
+        // Draw safe zone
+        safeZone.draw();
 
-    // Draw obstacles
-    obstacles.forEach(obstacle => obstacle.draw());
+        // Draw obstacles
+        obstacles.forEach(obstacle => obstacle.draw());
 
-    // Draw babies
-    babies.forEach(baby => baby.draw());
+        // Draw babies
+        babies.forEach(baby => baby.draw());
 
-    // Draw players
-    players.forEach(player => player.draw());
+        // Draw players
+        players.forEach(player => player.draw());
+    } else {
+        // Draw welcome message
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 48px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('🐧 Penguin Rescue 🐧', GAME_WIDTH / 2, GAME_HEIGHT / 2 - 50);
+        ctx.font = '24px Arial';
+        ctx.fillText('Press "Start Game" to begin!', GAME_WIDTH / 2, GAME_HEIGHT / 2 + 20);
+    }
 }
 
 // Game loop
