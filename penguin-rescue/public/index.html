@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penguin Rescue Multiplayer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div id="ui-container">
+    <h1>Penguin Rescue 🐧</h1>
+    <div id="status-panel">
+      <div id="timer">Time: 2:00</div>
+      <div id="status-msg">Waiting for players...</div>
+      <button id="start-btn" style="display: none;">Start Game</button>
+    </div>
+    <div id="scoreboard">
+      <h3>Scoreboard</h3>
+      <ul id="score-list"></ul>
+    </div>
+  </div>
+
+  <div id="game-container">
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+  </div>
+
+  <div id="instructions">
+    <h3>How to Play:</h3>
+    <p>1. Move your mouse or drag to move your player (colored circle).</p>
+    <p>2. Touch a 🐧 to pick it up.</p>
+    <p>3. Bring the 🐧 to the center safe zone (white circle) to score!</p>
+    <p>4. Avoid the Polar Bears (🐻‍❄️)! If they catch you, you'll be stunned and drop your penguin.</p>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
